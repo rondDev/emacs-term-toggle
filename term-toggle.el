@@ -90,9 +90,9 @@ Support toggle for shell, term, ansi-term, eshell and ielm."
 
 (defun term-toggle--toggle (term-buffer)
   (if-let ((term-window (get-buffer-window term-buffer)))
-    (progn
-      (bury-buffer term-buffer)
-      (delete-window term-window))
+      (progn
+        (bury-buffer term-buffer)
+        (delete-window term-window))
     (split-window-vertically)
     (other-window 1)
     (pop-to-buffer-same-window term-buffer t)
@@ -111,6 +111,11 @@ Support toggle for shell, term, ansi-term, eshell and ielm."
     (term-toggle--toggle (get-buffer name))))
 
 ;;; Commands
+;;;###autoload
+(defun term-toggle-vterm ()
+  "Toggle `term'."
+  (interactive) (term-toggle 'vterm))
+
 ;;;###autoload
 (defun term-toggle-term ()
   "Toggle `term'."
