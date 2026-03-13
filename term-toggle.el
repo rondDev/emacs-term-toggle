@@ -113,7 +113,7 @@ Support toggle for shell, term, ansi-term, eshell and ielm."
 ;;; Commands
 ;;;###autoload
 (defun term-toggle-vterm ()
-  "Toggle `term'."
+  "Toggle `vterm'."
   (interactive) (term-toggle 'vterm))
 
 ;;;###autoload
